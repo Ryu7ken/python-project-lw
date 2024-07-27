@@ -1,3 +1,4 @@
+import speech_recognition as sr
 import pyemail
 import pysearch
 import pylocate
@@ -20,8 +21,15 @@ print("""\t\t-----MENU-----\n
 \t\t   Bulk Email\n
 \t\t      Exit\n""")
 
+print("Speak what you want from the Menu and it will be done! NOTE: You have 7 seconds to Speak your choice.")
+
 while True:
-    choice = input("Tell me and I will do it! ")
+    recog = sr.Recognizer()
+    with sr.Microphone() as mymic:
+        audio = recog.record(mymic, duration=7)
+        choice1 = recog.recognize_google(audio)
+        choice = choice1.lower()
+        print(choice)
     
     if ("email" in choice):
     
