@@ -7,6 +7,7 @@ microphone what they want to do from the menu.
 </h3>
 
 <h3>Content of the menu project :
+
 1. Sending email using the yagmail library and we have to provide these
 inputs:
    - Sender’s email.
